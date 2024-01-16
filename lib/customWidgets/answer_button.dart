@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton({
@@ -26,7 +27,10 @@ class AnswerButton extends StatelessWidget {
             child: Text(
               answerText,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontStyle: FontStyle.italic),
+              style: GoogleFonts.pacifico(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal),
             )));
   }
 }

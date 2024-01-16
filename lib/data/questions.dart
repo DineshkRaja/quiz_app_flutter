@@ -2,28 +2,31 @@ import 'package:sample_flutter/models/quiz_questions.dart';
 
 const questions = [
   QuizQuestions('What is Flutter?', [
+    'All',
     'Flutter uses the Dart programming language, which is optimized for client-side development.',
     'Flutter uses a reactive programming model that allows for real-time updates and fast rendering of UI.',
-    'Flutter provides a rich set of pre-built widgets that can be customized to create beautiful and responsive UI.',
-    'All Above'
+    'Flutter provides a rich set of pre-built widgets that can be customized to create beautiful and responsive UI.'
   ]),
-  QuizQuestions('What are some common Flutter performance optimization techniques?', [
-    'Minimizing widget rebuilds',
+  QuizQuestions(
+      'What are some common Flutter performance optimization techniques?', [
     'Minimizing widget rebuilds, Reducing the size of widgets, Using the right widgets, Reducing unnecessary layers, Minimizing expensive operations, Using the right data structures',
+    'Minimizing widget rebuilds',
     'Use Coroutine',
-    'None Above All'
+    'Not All'
   ]),
-  QuizQuestions('What is the difference between StatelessWidget and StatefulWidget in Flutter?', [
-    'StatelessWidget is a widget has Jetpack Compose & StatefulWidget is a widget Swift UI',
-    'StatefulWidget is a widget that does not have any mutable state',
-    'StatelessWidget is a widget that does not have any mutable state & StatefulWidget is a widget that has a mutable state',
-    'None Above All'
-  ]),
-  QuizQuestions('How are Flutter UIs built?', [
-    'StatelessWidget is a widget has Jetpack Compose & StatefulWidget is a widget Swift UI',
-    'StatefulWidget is a widget that does not have any mutable state',
-    'StatelessWidget is a widget that does not have any mutable state & StatefulWidget is a widget that has a mutable state',
-    'None Above All'
+  QuizQuestions(
+      'What is the difference between StatelessWidget and StatefulWidget in Flutter?',
+      [
+        'StatelessWidget is a widget that does not have any mutable state & StatefulWidget is a widget that has a mutable state',
+        'StatelessWidget is a widget has Jetpack Compose & StatefulWidget is a widget Swift UI',
+        'StatefulWidget is a widget that does not have any mutable state',
+        'Not All'
+      ]),
+  QuizQuestions('Is Flutter Open Source or not?', [
+    'Yes, Flutter is an open-source mobile application development framework developed by Google.',
+    'Yes, Flutter is an open-source mobile application development framework developed by Microsoft',
+    'No, Flutter is an not open-source mobile application development framework developed by Google',
+    'Not All'
   ]),
   QuizQuestions(
     'What are the main building blocks of Flutter UIs?',
