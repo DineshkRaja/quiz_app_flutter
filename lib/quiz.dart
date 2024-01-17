@@ -28,6 +28,13 @@ class _QuizState extends State<Quiz> {
     super.dispose();
   }
 
+  void restartQuiz(){
+    setState(() {
+      selectedAnswers = [];
+      activeScreen = QuestionsScreen(onSelectAnswer: chooseAnswer);
+    });
+  }
+
   void switchScreens() {
     setState(() {
       activeScreen = QuestionsScreen(onSelectAnswer: chooseAnswer);
@@ -38,7 +45,7 @@ class _QuizState extends State<Quiz> {
     selectedAnswers.add(answer);
     if (selectedAnswers.length == questions.length) {
       setState(() {
-        activeScreen = ResultsScreen(chosenAnswers: selectedAnswers);
+        activeScreen = ResultsScreen(chosenAnswers: selectedAnswers, restartQuiz: restartQuiz);
         //selectedAnswers = [];
       });
     }

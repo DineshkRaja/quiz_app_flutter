@@ -4,9 +4,10 @@ import 'package:sample_flutter/data/questions.dart';
 import 'package:sample_flutter/question_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key, required this.chosenAnswers});
+  const ResultsScreen({super.key, required this.chosenAnswers, required this.restartQuiz});
 
   final List<String> chosenAnswers;
+  final void Function() restartQuiz;
 
 
   List<Map<String, Object>> getSummaryData() {
@@ -46,7 +47,7 @@ class ResultsScreen extends StatelessWidget {
                 QuestionSummary(summaryData: getSummaryData()),
                 const SizedBox(height: 30),
                 FilledButton.icon(
-                    onPressed: () {},
+                    onPressed: restartQuiz,
                     icon: const Icon(Icons.restart_alt, color: Colors.white,),
                     label: Text(
                       'Restart the Questions',

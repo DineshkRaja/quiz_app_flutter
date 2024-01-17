@@ -19,12 +19,13 @@ class QuestionSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox(
-        height: 350,
         child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
               children: summaryData.map((data) {
                 return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     if (data['user_answer'] as String ==
                         data['correct_answer'] as String) ...[
@@ -45,29 +46,34 @@ class QuestionSummary extends StatelessWidget {
                       )
                     ],
                     Expanded(
-                        child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(data['questions'] as String,
-                            textAlign: TextAlign.start,
-                            style: GoogleFonts.pacifico(
-                                color: Colors.white, fontSize: 20)),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(data['user_answer'] as String,
-                            style: GoogleFonts.pacifico(
-                                color: Colors.cyanAccent, fontSize: 15)),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(data['correct_answer'] as String,
-                            style: GoogleFonts.pacifico(
-                                color: Colors.lightBlue, fontSize: 15)),
-                        const SizedBox(
-                          height: 10,
-                        )
-                      ],
+                        child: Container(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 0, horizontal: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 5),
+                          Text(data['questions'] as String,
+                              textAlign: TextAlign.start,
+                              style: GoogleFonts.pacifico(
+                                  color: Colors.white, fontSize: 20)),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(data['user_answer'] as String,
+                              style: GoogleFonts.pacifico(
+                                  color: Colors.cyanAccent, fontSize: 15)),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(data['correct_answer'] as String,
+                              style: GoogleFonts.pacifico(
+                                  color: Colors.lightBlue, fontSize: 15)),
+                          const SizedBox(
+                            height: 10,
+                          )
+                        ],
+                      ),
                     ))
                   ],
                 );
