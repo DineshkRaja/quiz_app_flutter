@@ -10,7 +10,7 @@ class ResultsScreen extends StatelessWidget {
   final void Function() restartQuiz;
 
 
-  List<Map<String, Object>> getSummaryData() {
+  List<Map<String, Object>> get getSummaryData {
     final List<Map<String, Object>> summary = [];
     for (int i = 0; i < chosenAnswers.length; i++) {
       summary.add({
@@ -26,7 +26,7 @@ class ResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final correctNumberOfQuestions = getSummaryData().where((data) {
+    final correctNumberOfQuestions = getSummaryData.where((data) {
       return data['user_answer'] == data['correct_answer'];
     }).length;
 
@@ -44,7 +44,7 @@ class ResultsScreen extends StatelessWidget {
                   style: GoogleFonts.pacifico(color: Colors.white, fontSize: 25),
                 ),
                 const SizedBox(height: 20),
-                QuestionSummary(summaryData: getSummaryData()),
+                QuestionSummary(summaryData: getSummaryData),
                 const SizedBox(height: 30),
                 FilledButton.icon(
                     onPressed: restartQuiz,
